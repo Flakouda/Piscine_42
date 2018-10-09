@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/03 12:23:54 by florientako       #+#    #+#             */
-/*   Updated: 2018/09/18 17:45:52 by florientako      ###   ########.fr       */
+/*   Created: 2018/09/20 12:39:11 by florientako       #+#    #+#             */
+/*   Updated: 2018/09/20 12:39:41 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+char	*ft_strncat(char *dest, char *src, int nb)
 {
 	int		i;
+	int		j;
 
+	j = -1;
 	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
+	while (dest[i])
 		i++;
-	return (i);
+	while (src[++j] && j < nb)
+	{
+		dest[i] = src[j];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

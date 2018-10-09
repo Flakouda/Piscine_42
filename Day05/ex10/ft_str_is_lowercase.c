@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/03 12:23:54 by florientako       #+#    #+#             */
-/*   Updated: 2018/09/18 17:45:52 by florientako      ###   ########.fr       */
+/*   Created: 2018/09/20 12:10:49 by florientako       #+#    #+#             */
+/*   Updated: 2018/10/08 15:16:19 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int		ft_str_is_lowercase(char *str)
 {
-	int		i;
-
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-		i++;
-	return (i);
+	while (*str)
+	{
+		if (!(*str >= 'a' && *str <= 'z'))
+			return (0);
+		str++;
+	}
+	return (1);
 }

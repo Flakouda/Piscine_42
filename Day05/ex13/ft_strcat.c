@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/03 12:23:54 by florientako       #+#    #+#             */
-/*   Updated: 2018/09/18 17:45:52 by florientako      ###   ########.fr       */
+/*   Created: 2018/09/20 12:18:26 by florientako       #+#    #+#             */
+/*   Updated: 2018/09/20 12:37:33 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+char	*ft_strcat(char *dest, char *src)
 {
 	int		i;
+	int		j;
 
+	j = -1;
 	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
+	while (dest[i])
 		i++;
-	return (i);
+	while (src[++j])
+	{
+		dest[i] = src[j];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/03 12:23:54 by florientako       #+#    #+#             */
-/*   Updated: 2018/09/18 17:45:52 by florientako      ###   ########.fr       */
+/*   Created: 2018/09/20 12:07:52 by florientako       #+#    #+#             */
+/*   Updated: 2018/09/20 12:10:06 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int		ft_str_is_alpha(char *str)
 {
-	int		i;
-
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-		i++;
-	return (i);
+	while (*str)
+	{
+		if (!((*str >= 'a' && *str <= 'z') ||
+		(*str >= 'A' && *str <= 'Z')))
+			return (0);
+		str++;
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 16:07:17 by florientako       #+#    #+#             */
-/*   Updated: 2018/09/18 15:44:15 by florientako      ###   ########.fr       */
+/*   Updated: 2018/09/19 17:26:39 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,9 @@ int			main()
 
 	/*	Test ex09 */
 
+	/*
 	ft_eight_queens_puzzle_2();
+	*/
 
 	return (0);
 }

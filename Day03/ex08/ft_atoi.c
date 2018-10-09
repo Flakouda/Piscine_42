@@ -6,7 +6,7 @@
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 13:08:45 by florientako       #+#    #+#             */
-/*   Updated: 2018/09/03 15:11:39 by florientako      ###   ########.fr       */
+/*   Updated: 2018/09/18 17:46:40 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int		ft_atoi(char *str)
 	i = 0;
 	j = 0;
 	neg = 0;
+	if (!str)
+		return (0);
 	while ((str[i] <= 13 && str[i] >= 9) || str[i] == ' ')
 		i++;
 	str[i] == '-' ? neg++ : 0;

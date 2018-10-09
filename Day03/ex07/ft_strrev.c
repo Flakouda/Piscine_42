@@ -6,7 +6,7 @@
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/03 12:32:52 by florientako       #+#    #+#             */
-/*   Updated: 2018/09/03 13:06:15 by florientako      ###   ########.fr       */
+/*   Updated: 2018/09/18 17:46:22 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strrev(char *str)
 
 	i = 0;
 	j = -1;
+	if (!str)
+		return (0);
 	while (str[i])
 		i++;
 	while (i-- > j++)

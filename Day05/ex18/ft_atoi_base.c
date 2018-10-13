@@ -6,7 +6,7 @@
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/08 16:16:15 by florientako       #+#    #+#             */
-/*   Updated: 2018/10/09 11:27:33 by florientako      ###   ########.fr       */
+/*   Updated: 2018/10/09 14:59:42 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,25 +59,7 @@ int			base_error(char *base, int i, int j)
 	return (1);
 }
 
-int		execute(char *str, char *base, int i, int j)
-{
-	int		neg;
-	
-	neg = 0;
-	if (!str)
-		return (0);
-	str[i] == '-' ? neg++ : 0;
-	str[i] == '-' || str[i] == '+' ? i++ : 0;
-	while (str[i] >= base[] && str[i] <= '9')
-	{
-		j = j + str[i] - '0';
-		i++;
-		str[i] >= '0' && str[i] <= '9' ? j *= 10 : 0;
-	}
-	return (j);
-}
-
-static int	ft_atoi_b(char *str, char *base, int i, int n)
+static int	execute(char *str, char *base, int i, int n)
 {
 	int		negatif;
 	int		k;
@@ -107,7 +89,5 @@ static int	ft_atoi_b(char *str, char *base, int i, int n)
 
 int				ft_atoi_base(char *str, char *base)
 {
-	base_error(base, 1, 0);
-	string_error(str, base, 0, 0);
 	return (execute(str, base, 0, 0));
 }

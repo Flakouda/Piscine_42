@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/09 16:46:04 by florientako       #+#    #+#             */
-/*   Updated: 2018/10/13 10:38:34 by florientako      ###   ########.fr       */
+/*   Created: 2018/10/09 12:14:42 by florientako       #+#    #+#             */
+/*   Updated: 2018/10/09 12:14:45 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int		*ft_range(int min, int max)
+int		ft_strlen(char *str)
 {
-	int		*tab;
 	int		i;
 
 	i = 0;
-	if (min >= max)
-		return (NULL);
-	if (!(tab = (int *)malloc(sizeof(*tab) * (max - min))))
-		return (NULL);
-	while (min < max)
-	{
-		tab[i] = min;
-		min++;
-		i++; 
-	}
-	return (tab);
+	if (!str)
+		return (0);
+	while (str[i])
+		i++;
+	return (i);
 }

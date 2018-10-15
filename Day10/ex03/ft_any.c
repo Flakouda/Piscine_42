@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/09 16:46:04 by florientako       #+#    #+#             */
-/*   Updated: 2018/10/13 10:38:34 by florientako      ###   ########.fr       */
+/*   Created: 2018/10/13 15:03:21 by florientako       #+#    #+#             */
+/*   Updated: 2018/10/13 19:58:04 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int		*ft_range(int min, int max)
+int		ft_any(char **tab, int (*f)(char *))
 {
-	int		*tab;
 	int		i;
 
 	i = 0;
-	if (min >= max)
-		return (NULL);
-	if (!(tab = (int *)malloc(sizeof(*tab) * (max - min))))
-		return (NULL);
-	while (min < max)
+	while (tab[i] != 0)
 	{
-		tab[i] = min;
-		min++;
-		i++; 
+		if (f(tab[i]) == 1)
+			return (1);
+		i++;
 	}
-	return (tab);
+	return (0);
 }

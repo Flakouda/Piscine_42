@@ -6,11 +6,12 @@
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/09 22:26:33 by florientako       #+#    #+#             */
-/*   Updated: 2018/10/13 12:38:03 by florientako      ###   ########.fr       */
+/*   Updated: 2018/10/13 13:06:23 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "ft_stock_par.h"
 
 int		count_words(char *str, int count, int i)
 {

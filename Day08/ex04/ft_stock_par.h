@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_stock_par.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/09 16:46:04 by florientako       #+#    #+#             */
-/*   Updated: 2018/10/13 10:38:34 by florientako      ###   ########.fr       */
+/*   Created: 2018/10/13 11:38:09 by florientako       #+#    #+#             */
+/*   Updated: 2018/10/13 13:26:21 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_STOCK_PAR_H
+# define FT_STOCK_PAR_H
 
-int		*ft_range(int min, int max)
+# include <unistd.h>
+
+char					**ft_split_whitespaces(char *str);
+struct s_stock_par		*ft_param_to_par(int ac, char **av);
+void					ft_show_tab(struct s_stock_par *par);
+
+
+
+typedef struct	s_stock_par
 {
-	int		*tab;
-	int		i;
+	int			size_param;
+	char		*str;
+	char		*copy;
+	char		**tab;
+}				t_stock_par;
 
-	i = 0;
-	if (min >= max)
-		return (NULL);
-	if (!(tab = (int *)malloc(sizeof(*tab) * (max - min))))
-		return (NULL);
-	while (min < max)
-	{
-		tab[i] = min;
-		min++;
-		i++; 
-	}
-	return (tab);
-}
+#endif

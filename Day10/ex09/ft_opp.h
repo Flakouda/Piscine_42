@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_opp.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/09 16:46:04 by florientako       #+#    #+#             */
-/*   Updated: 2018/10/13 10:38:34 by florientako      ###   ########.fr       */
+/*   Created: 2018/10/15 13:41:28 by florientako       #+#    #+#             */
+/*   Updated: 2018/10/15 13:47:10 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef __FT_OPP_H__
+# define __FT_OPP_H__
 
-int		*ft_range(int min, int max)
-{
-	int		*tab;
-	int		i;
+t_opp	gl_opptab[] = {{"-", &ft_sub}, \
+{"+", &ft_add}, \
+{"*", &ft_mul}, \
+{"/", &ft_div}, \
+{"%", &ft_mod}, \
+{"", &ft_usage}};
 
-	i = 0;
-	if (min >= max)
-		return (NULL);
-	if (!(tab = (int *)malloc(sizeof(*tab) * (max - min))))
-		return (NULL);
-	while (min < max)
-	{
-		tab[i] = min;
-		min++;
-		i++; 
-	}
-	return (tab);
-}
+#endif	/* __FT_OPP_H__ */

@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/09 16:46:04 by florientako       #+#    #+#             */
-/*   Updated: 2018/10/13 10:38:34 by florientako      ###   ########.fr       */
+/*   Created: 2018/10/14 22:39:12 by florientako       #+#    #+#             */
+/*   Updated: 2018/10/14 22:59:27 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int		*ft_range(int min, int max)
+int		ft_is_sort(int	*tab, int length, int (*f)(int, int))
 {
-	int		*tab;
 	int		i;
 
 	i = 0;
-	if (min >= max)
-		return (NULL);
-	if (!(tab = (int *)malloc(sizeof(*tab) * (max - min))))
-		return (NULL);
-	while (min < max)
+	if (f(tab[i], tab[i + 1]) < 0 && i < length - 1)
 	{
-		tab[i] = min;
-		min++;
-		i++; 
+		while (i < length - 2)
+		{
+			i++;
+			if (f(tab[i], tab[i + 1]) > 0)
+				return (0);
+		}
 	}
-	return (tab);
+	else if (f(tab[i], tab[i + 1]) > 0 && i < length - 1)
+	{
+		while (i < length - 2)
+		{
+			i++;
+			if (f(tab[i], tab[i + 1]) < 0)
+				return (0);
+		}
+	}
+	return (1);
 }

@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_point.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/09 16:46:04 by florientako       #+#    #+#             */
-/*   Updated: 2018/10/13 10:38:34 by florientako      ###   ########.fr       */
+/*   Created: 2018/10/13 11:17:30 by florientako       #+#    #+#             */
+/*   Updated: 2018/10/13 11:26:58 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "ft_point.h"
+#include <stdio.h>
 
-int		*ft_range(int min, int max)
+void	set_point(t_point *point)
 {
-	int		*tab;
-	int		i;
+	point->x = 42;
+	point->y = 21;	
+}
 
-	i = 0;
-	if (min >= max)
-		return (NULL);
-	if (!(tab = (int *)malloc(sizeof(*tab) * (max - min))))
-		return (NULL);
-	while (min < max)
-	{
-		tab[i] = min;
-		min++;
-		i++; 
-	}
-	return (tab);
+int		main(void)
+{
+	t_point		point;
+
+	set_point(&point);
+	printf("%d\n", point.x);
+	printf("%d\n", point.y);
+	return (0);
 }

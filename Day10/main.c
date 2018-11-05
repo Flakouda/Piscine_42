@@ -6,7 +6,7 @@
 /*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/13 14:35:03 by florientako       #+#    #+#             */
-/*   Updated: 2018/10/15 13:39:23 by florientako      ###   ########.fr       */
+/*   Updated: 2018/10/15 18:39:10 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,6 +176,7 @@ int		main(int argc, char **argv)
 
 	/*	Test ex08	*/
 
+	/*
 	char	**tab;
 	int		i;
 
@@ -184,6 +185,7 @@ int		main(int argc, char **argv)
 	ft_putchar('\n');
 	ft_advanced_sort_wordtab(tab, &ft_strcmp);
 	ft_print_words_tables(tab);
+	*/
 
 	return (0);
 }

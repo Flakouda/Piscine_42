@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flakouda <flakouda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 18:20:00 by florientako       #+#    #+#             */
-/*   Updated: 2018/11/05 16:47:35 by flakouda         ###   ########.fr       */
+/*   Updated: 2018/11/06 17:07:04 by florientako      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	ft_list_foreach_if(t_list *begin_list, void (*f)(void *),
 		void *data_ref, int (*cmp)());
 t_list	*ft_list_find(t_list *begin_list, void *data_ref, int (*cmp)());
 void	ft_list_remove_if(t_list *begin_list, void *data_ref, int (*cmp)());
+void	ft_list_merge(t_list **begin_list1, t_list *begin_list2);
 
 void	print_data(void *data)
 {
@@ -257,6 +258,7 @@ int	main(int ac, char **av)
 
 	/*	Test ex12	*/
 
+	/*
 	t_list *list;
 
 	list = NULL;
@@ -266,6 +268,24 @@ int	main(int ac, char **av)
 	list = add_link(list, "7");
 	ft_list_remove_if(list, "5", ft_strcmp);
 	aff_list(list);
-	
+	*/
+
+	/*	Test ex13	*/
+
+	/*
+	t_list *list;
+	t_list *list2;
+
+	list = NULL;
+	list2 = NULL;
+	list = add_link(list, "4");
+	list = add_link(list, "5");
+	list2 = add_link(list, "6");
+	list2 = add_link(list, "8");
+	list2 = add_link(list, "7");
+	ft_list_merge(&list, list2);
+	aff_list(list);
+	*/
+
 	return (0);
 }

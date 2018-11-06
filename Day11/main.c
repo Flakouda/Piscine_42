@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florientakoudad <florientakoudad@studen    +#+  +:+       +#+        */
+/*   By: flakouda <flakouda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 18:20:00 by florientako       #+#    #+#             */
-/*   Updated: 2018/11/03 19:17:42 by florientako      ###   ########.fr       */
+/*   Updated: 2018/11/05 16:47:35 by flakouda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ void	ft_list_clear(t_list **begin_list);
 t_list	*ft_list_at(t_list *begin_list, unsigned int nbr);
 void	ft_list_reverse(t_list **begin_list);
 void	ft_list_foreach(t_list *begin_list, void(*f)(void *));
+void	ft_list_foreach_if(t_list *begin_list, void (*f)(void *),
+		void *data_ref, int (*cmp)());
+t_list	*ft_list_find(t_list *begin_list, void *data_ref, int (*cmp)());
+void	ft_list_remove_if(t_list *begin_list, void *data_ref, int (*cmp)());
 
 void	print_data(void *data)
 {
@@ -199,6 +203,7 @@ int	main(int ac, char **av)
 
 	/*	Test ex09	*/
 
+	/*
 	t_list *list;
 
 	list = NULL;
@@ -206,8 +211,61 @@ int	main(int ac, char **av)
 	list = add_link(list, "5");
 	list = add_link(list, "6");
 	list = add_link(list, "7");
-	printf("\n");
 	ft_list_foreach(list, print_data);
+	*/
 
+	/*	Test ex10	*/
+	
+	/*
+	t_list *list;
+
+	list = NULL;
+	list = add_link(list, "4");
+	list = add_link(list, "5");
+	list = add_link(list, "6");
+	list = add_link(list, "7");
+	ft_list_foreach_if(list, print_data, "5", ft_strcmp);
+	*/
+
+	/*	Test ex11	*/
+
+	/*
+	t_list *list;
+
+	list = NULL;
+	list = add_link(list, "4");
+	list = add_link(list, "5");
+	list = add_link(list, "6");
+	list = add_link(list, "7");
+	list = ft_list_find(list, "5", ft_strcmp);
+	printf("find: %s!\n" ,list->data);
+	*/
+
+	/*	Test ex11	*/
+
+	/*
+	t_list *list;
+
+	list = NULL;
+	list = add_link(list, "4");
+	list = add_link(list, "5");
+	list = add_link(list, "6");
+	list = add_link(list, "7");
+	list = ft_list_find(list, "5", ft_strcmp);
+	printf("find: %s!\n" ,list->data);
+	*/
+
+	/*	Test ex12	*/
+
+	t_list *list;
+
+	list = NULL;
+	list = add_link(list, "4");
+	list = add_link(list, "5");
+	list = add_link(list, "6");
+	list = add_link(list, "7");
+	ft_list_remove_if(list, "5", ft_strcmp);
+	aff_list(list);
+	
 	return (0);
 }
